@@ -1,29 +1,19 @@
-# def longestCommonPrefix(strs: list[str]) -> str:
-#         index = 0
-#         _str = ""
-#         while index<len(strs[0]):#it will be the least if all is present
-#             currChar = ""
-#             for s in strs:
-#                 if currChar and currChar != s[index]:
-#                     return _str
-#                 currChar = s[index]                
-#             _str += s
-#             index+=1
-#             print(_str)
-
-def longestCommonPrefix(strs: list[str]) -> str:
-        index = 0
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
         _str = ""
-        while index<len(strs[0]):#it will be the least if all is present
-            currChar = strs[0][0]
+        if not len(strs) or not len(strs[0]):
+            return _str
+        idx = 1
+        shortestStr = len(strs[0])
+        while idx < len(strs):
+            if len(strs[idx]) < shortestStr:
+                shortestStr = len(strs[idx])
+            idx+=1
+        for idx in range(shortestStr):
+            currChar = strs[0][idx]
             for s in strs:
-                if currChar != s[index]:
+                if currChar != s[idx]:
                     return _str
-                print(currChar)
-                currChar = s[index]                
-            _str += s[index]
-            index+=1
-
-
-strs = ["flower","flow","flight"]
-print(longestCommonPrefix(strs))
+                currChar = s[idx]                
+            _str += s[idx]
+        return _str
