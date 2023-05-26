@@ -1,14 +1,11 @@
 class Solution:
-    def mergeAlternately(self, word1: str, word2: str) -> str:
-        _str = ""
-        shorterStr = len(word1) if len(word1)<len(word2) else len(word2)
-        ptr = 0
-        while ptr < shorterStr:
-            _str += word1[ptr]            
-            _str += word2[ptr]            
-            ptr+=1
-        if len(word1) > len(word2):
-            _str += word1[ptr:]
-        else:
-            _str += word2[ptr:]
-        return _str
+    def diagonalSum(self, mat: List[List[int]]) -> int:
+        runningSum = 0
+        n = len(mat)
+        for i in range(len(mat)):
+            for j in range(len(mat[i])):
+                if (i==j):
+                    runningSum += mat[i][j]
+                elif(i+j == n-1):
+                    runningSum += mat[i][j]
+        return runningSum
