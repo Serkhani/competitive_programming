@@ -16,4 +16,4 @@ if __name__ == '__main__':
         elif command[0] == 'pop':
             theList.pop()
         elif command[0] == 'reverse':
-            theList.sort(reverse=True)
+            theList.reverse()
