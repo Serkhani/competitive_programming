@@ -1,0 +1,3 @@
+Beautiful Array
+Didn't understand the question
+Did not check if less than zero has even number of members
