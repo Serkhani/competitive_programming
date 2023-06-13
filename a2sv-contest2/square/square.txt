@@ -1,0 +1,1 @@
+Did not think about the possibility of the rectangles having the same dimensions
