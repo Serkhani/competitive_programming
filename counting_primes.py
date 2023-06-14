@@ -1,16 +1,19 @@
 class Solution:
     def countPrimes(self, n: int) -> int:
+        """
+        create a list: first and second are always False
+        for each member that is prime, 
+        make the multiples of the number in the list False,
+        because they are not prime
+        """
         if n <= 2:
             return 0        
-        is_prime = [True] * n
-        is_prime[0] = is_prime[1] = False
-        i = 2
-        while i < n:
-            if is_prime[i] and i**2 <= n:
-                j = i**2
-                while j < n:
-                    is_prime[j] = False
-                    j+=i
-            i+=1
-        prime_count = is_prime.count(True)
-        return prime_count
+        isPrime = [True] * n
+        isPrime[0] = isPrime[1] = False
+        for i in range(2, n):
+            if isPrime[i] and i**2 <= n:
+                for j in range(i**2, n, i):
+                    isPrime[j] = False
+        
+        return sum(isPrime)
+        # O(n^2)
