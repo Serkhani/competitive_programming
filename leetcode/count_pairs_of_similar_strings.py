@@ -1,8 +1,9 @@
+from collections import Counter
 class Solution:
     def similarPairs(self, words: List[str]) -> int:
         count = 0
-        for idx, word_x in enumerate(words):
-            for word_y in words[idx+1:]:
-                if set(word_x)==set(word_y):
-                    count += 1
-        return count
+        for idx in range(len(words)):
+            words[idx] = ''.join(sorted(set(words[idx])))
+        counter = Counter(words)
+        print(counter)
+        return sum((n*(n-1))//2 for n in counter.values())
