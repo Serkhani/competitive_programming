@@ -16,10 +16,9 @@ from collections import Counter
 
 def countingSort(arr):
     # Write your code here
-    counter = Counter(arr)
     ans= [0] * 100
-    for k in counter.keys:
-        ans[k] = counter[k]
+    for i in arr:
+        ans[i] += 1
     return ans
         
 
