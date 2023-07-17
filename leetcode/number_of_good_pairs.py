@@ -1,6 +1,8 @@
 from collections import Counter
 class Solution:
     def numIdenticalPairs(self, nums: List[int]) -> int:
+
+
         def factorial(n: int) -> int:
             if n == 0 or n == 1: return 1
             else: return n * factorial(n-1)
