@@ -8,7 +8,6 @@ class Solution:
             if A[ptr]==B[ptr]:
                 count+=1
                 commons.add(A[ptr])
-                commons.add(B[ptr])
             else:
                 if A[ptr] in commons:
                     count+=1
